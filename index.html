@@ -6,13 +6,25 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     body {
-      background: linear-gradient(135deg, #0f172a, #1e293b);
+      background: url('/mnt/data/WhatsApp Image 2025-03-16 at 17.13.17.jpeg') no-repeat center center fixed;
+      background-size: cover;
       color: white;
       font-family: 'Poppins', sans-serif;
+    }
+    .overlay {
+      background-color: rgba(15, 23, 42, 0.7);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
     }
     .fade-in {
       opacity: 0;
       animation: fadeIn 2s ease-in-out forwards;
+      z-index: 1;
+      position: relative;
     }
     @keyframes fadeIn {
       to {
@@ -21,7 +33,8 @@
     }
   </style>
 </head>
-<body class="h-screen flex flex-col justify-center items-center text-center p-6">
+<body class="h-screen flex flex-col justify-center items-center text-center p-6 relative overflow-hidden">
+  <div class="overlay"></div>
   <header class="fade-in">
     <h1 class="text-6xl md:text-8xl font-extrabold mb-4 tracking-wide">
       Welcome to <span class="text-blue-400">B_Owali Creatives</span>
@@ -31,7 +44,7 @@
     </p>
   </header>
 
-  <footer class="absolute bottom-4 text-sm opacity-60">
+  <footer class="absolute bottom-4 text-sm opacity-60 z-10">
     &copy; 2025 B_Owali Creatives. All rights reserved.
   </footer>
 </body>
